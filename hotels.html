@@ -21,21 +21,62 @@
       </header>
       <main>
         <section class="search-filters">
-          <p>Инфраструктура:</p>
-          <ul>
-            <li>Бассейн</li>
-            <li>Парковка</li>
-            <li>Wi-Fi</li>
-          </ul>
-          <p>Тип жилья:</p>
-          <ul>
-            <li>Гостиница</li>
-            <li>Мотель</li>
-            <li>Аппартаменты</li>
-          </ul>
-          <p>Стоимость в сутки(Р):</p>
-          <!-- форма стоимости -->
-          <button type="submit">Показать</button>
+          <form class="hotel-filters" action="#" method="get">
+            <fieldset class="infrastructure">
+              <legend>Инфраструктура:</legend>
+              <ul>
+                <li class="filter-option">
+                  <input id="pool" class="filters-checkbox" type="checkbox" name="pool">
+                  <label for="pool">Бассейн</label>
+                </li>
+                <li class="filter-option">
+                  <input id="parking" class="filters-checkbox" type="checkbox" name="parking">
+                  <label for="parking">Парковка</label>
+                </li>
+                <li class="filter-option">
+                  <input id="wi-fi" class="filters-checkbox" type="checkbox" name="wi-fi">
+                  <label for="wi-fi">Wi-Fi</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="accomondation">
+              <legend>Тип жилья:</legend>
+              <ul>
+                <li class="filter-option">
+                  <input id="hotel" class="filters-checkbox" type="checkbox" name="hotel">
+                  <label for="hotel">Гостиница</label>
+                </li>
+                <li class="filter-option">
+                  <input id="motel" class="filters-checkbox" type="checkbox" name="motel">
+                  <label for="motel">Мотель</label>
+                </li>
+                <li class="filter-option">
+                  <input id="apartments" class="filters-checkbox" type="checkbox" name="apartments">
+                  <label for="apartments">Апартаменты</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="accomondation">
+              <legend>Стоимось в сутки(Р):</legend>
+              <div class="price-field">
+                <p>
+                  <label class="visually-hidden" for="price-from">Цена от:</label>
+                  <input id="price-from" type="number" name="price-from" placeholder="От">
+                </p>
+                <p>
+                  <label class="visually-hidden" for="price-to">Цена до:</label>
+                  <input id="price-to" type="number" name="price-to" placeholder="До">
+                </p>
+              </div>
+              <div class="price-range">
+                <div class="price-slider">
+                  <span class="buller-left">*</span>
+                  <span class="buller-right">*</span>
+                </div>
+              </div>
+              <button class="btn" type="submit">Показать</button>
+            </fieldset>
+          </form>
         </section>
 
         <section class="search-results">
@@ -44,14 +85,14 @@
             <div class="sorting-filters">
               <p>Сортировка:</p>
               <ul>
-                <li><span class="current-filter">По цене</span></li>
-                <li><span>По типу</span></li>
-                <li><span>По рейтингу</span></li>
+                <li><button class="current-filter" type="button">По цене</button></li>
+                <li><button type="button">По типу</button></li>
+                <li><button type="button">По рейтингу</button></li>
               </ul>
             </div>
-            <div class="quantity-filters">
-              <span class="lowest-first">По возврастанию</span>
-              <span class="highest-first">По убыванию</span>
+            <div class="direction-filters">
+              <button class="lowest-first current-direction" type="button">По возврастанию</button>
+              <button class="highest-first" type="button">По убыванию</button>
             </div>
           </div>
           <div class="hotel-list">
@@ -128,9 +169,9 @@
       <footer class="main-footer">
         <a class="visit-sedona-link" href="https://travel.usnews.com/Sedona_AZ/Things_To_Do/"><b>#visitsedona</b></a>
         <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">YouTube</a></li>
+          <li><a href="#" title="Twitter"></a></li>
+          <li><a href="#" title="Facebook"></a></li>
+          <li><a href="#" title="YouTube"></a></li>
         </ul>
         <p class="footer-copyright">
           <span>Website by</span>

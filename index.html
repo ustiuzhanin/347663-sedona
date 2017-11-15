@@ -39,7 +39,7 @@
             <li class="first-advantage">
               <h3>Настоящий городок</h3>
               <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
-              <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Sedona's live"  height="256" width="800">
+              <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Жизнь в Седоне"  height="256" width="800">
               <ul class="sedonas-live-description">
                 <li>
                   <b>Жилье</b>
@@ -58,17 +58,17 @@
             <li class="second-advantage">
               <h3>Там есть мост дьявола</h3>
               <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-              <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Devil's Bridge, Sedona"  height="256" width="800">
+              <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Мост Дьявола, Седона"  height="256" width="800">
             </li>
-            <li class="">
+            <li class="rest-of-advantages">
               <h3>Небольшая площадь</h3>
               <p>Все достопримечательности находятся очень близко</p>
             </li>
-            <li class="">
+            <li class="rest-of-advantages">
               <h3>Красивая дорога</h3>
               <p>Ехать в седону из Лас-вегаса совсем не скучно</p>
             </li>
-            <li class="">
+            <li class="rest-of-advantages">
               <h3>Мало туристов</h3>
               <p>Большинство едет в Гранд Каньон и толпится там</p>
             </li>
@@ -78,8 +78,30 @@
         <section class="booking">
            <b>Заинтересовались?</b>
            <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-           <h2>Поиск гостиницы в Седоне</h2>
-           <!-- форма поиска гостиницы -->
+           <h2><button class="btn" type="button" name="button">Поиск гостиницы в Седоне</button></h2>
+           <form class="hotel-search-form visually-hidden" action="#" method="get">
+             <p class="check-in">
+               <label for="check-in-date">Дата заезда:</label>
+               <input id="check-in-date" type="date" name="check-in">
+             </p>
+             <p class="check-out">
+               <label for="check-out-date">Дата выезда:</label>
+               <input id="check-out-date" type="date" name="check-out">
+             </p>
+             <p class="adults-amount">
+               <label for="adults">Взрослые:</label>
+               <input id="adults" type="number" name="adults" value="0">
+               <button type="button" class="adult-up">+</button>
+               <button type="button" class="adult-down">-</button>
+             </p>
+             <p class="kids-amount">
+               <label for="kids">Дети:</label>
+               <input id="kids" type="number" name="kids" value="0">
+               <button type="button" class="kids-up">+</button>
+               <button type="button" class="kids-down">-</button>
+             </p>
+             <button class="btn" type="submit">Найти</button>
+           </form>
         </section>
       </main>
 
@@ -88,9 +110,9 @@
       <footer class="main-footer">
         <a class="visit-sedona-link" href="https://travel.usnews.com/Sedona_AZ/Things_To_Do/"><b>#visitsedona</b></a>
         <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">YouTube</a></li>
+          <li><a href="#" title="Twitter"></a></li>
+          <li><a href="#" title="Facebook"></a></li>
+          <li><a href="#" title="YouTube"></a></li>
         </ul>
         <p class="footer-copyright">
           <span>Website by</span>
