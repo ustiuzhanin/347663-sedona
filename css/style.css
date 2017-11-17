@@ -1,0 +1,167 @@
+/*fonts*/
+
+@font-face {
+  font-family: "PTSans";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url("../fonts/ptsans/ptsans.woff") format("woff2"),
+    url("../fonts/ptsans/ptsans.woff2") format("woff");
+}
+@font-face {
+  font-family: "PTSans";
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url("../fonts/ptsans/ptsansbold.woff") format("woff2"),
+    url("../fonts/ptsans/ptsansbold.woff2") format("woff");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  font-family: "PTSans", "Arial", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 21px;
+  color: #000;
+  text-align: center;
+
+  background-color: #fff;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  font-size: 21px;
+  line-height: 26px;
+}
+h3 {
+  font-size: 21px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*header*/
+
+.main-header {
+  background-color: #fff;
+}
+.main-navigation ul {
+  list-style-type: none;
+}
+.main-navigation a {
+  font-weight: bold;
+  line-height: 26px;
+  color: #000;
+}
+.main-navigation a:hover {
+  color: #81b3d2;
+}
+.main-navigation a:focus {
+  color: rgba(0,0,0,.3);
+}
+.main-navigation a.nav-active {
+  color: #766357;
+}
+
+/*welcome*/
+
+.welcome p {
+  line-height: 26px;
+  color: #333;
+}
+
+/*advantages*/
+
+.advantages p {
+  color: #333;
+}
+.advantages .advantages-list,
+.advantages .sedonas-live-description {
+  list-style-type: none;
+}
+
+.main-adv-wrapper {
+  background-color: #81b3d2;
+}
+.main-adv-wrapper p,
+.main-adv-wrapper h3 {
+  color: #fff;
+}
+.sedonas-live-description {
+  background-color: #fff;
+}
+.sedonas-live-description b {
+  font-size: 21px;
+  color: #000;
+}
+.rest-of-advantages {
+  background-color: #eee;
+}
+
+/*booking*/
+
+.booking b {
+  font-size: 30px;
+  line-height: 36px;
+}
+.booking p {
+  line-height: 24px;
+}
+.booking .search-btn {
+  color: #fff;
+  background-color: #766357;
+}
+.booking .search-btn:hover {
+  background-color: #604e43;
+}
+.booking .search-btn:focus {
+  background-color: #503e33;
+  color: rgba(256,256,256,.3);
+}
+.booking .hotel-search-form label {
+  font-weight: bold;
+}
+.booking .hotel-search-form input {
+  font-weight: bold;
+  font-size: 14px;
+}
+.booking .hotel-search-form .btn {
+  color: #fff;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 26px;
+  background-color: #81b3d2;
+  text-transform: uppercase;
+}
+.hotel-search-form .btn:hover {
+  background-color: #669ec0;
+}
+.hotel-search-form .btn:focus {
+  background-color: #5496bd;
+  color: rgba(256,256,256,.3);
+}
+
+/*footer*/
+
+.main-footer .visit-sedona-link {
+  font-size: 21px;
+}
+.main-footer .social-btn {
+  color: #fff;
+  background-color: #81b3d2;
+}
+.main-footer .social-btn:hover {
+  background-color: #669ec0;
+}
+.main-footer .social-btn:focus {
+  background-color: #5496bd;
+  color: rgba(256,256,256,.3);
+}

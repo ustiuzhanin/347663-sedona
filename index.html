@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="main-header">
         <nav class="main-navigation">
           <a class="sedona-logo">
-            <img src="img/logo.jpg" alt="Логотип Седоны" height="100" width="100">
+            <img src="img/logo.png" alt="Логотип Седоны" height="70" width="138">
           </a>
           <ul>
             <li><a href="#">Информация</a></li>
@@ -23,7 +25,7 @@
       <main>
         <section class="welcome">
           <div class="welcome-sedona-wrapper">
-            <h1>Sedona</h1>
+            <h1 class="visually-hidden">Sedona</h1>
           </div>
           <div class="welcome-descr-wrapper">
             <h2>Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
@@ -35,11 +37,13 @@
         </section>
 
         <section class="advantages">
-          <ol>
+          <ol class="advantages-list">
             <li class="first-advantage">
-              <h3>Настоящий городок</h3>
-              <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
-              <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Жизнь в Седоне"  height="256" width="800">
+              <div class="main-adv-wrapper">
+                <h3>Настоящий городок</h3>
+                <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
+                <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Жизнь в Седоне"  height="256" width="800">
+              </div>
               <ul class="sedonas-live-description">
                 <li>
                   <b>Жилье</b>
@@ -56,9 +60,11 @@
               </ul>
             </li>
             <li class="second-advantage">
-              <h3>Там есть мост дьявола</h3>
-              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-              <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Мост Дьявола, Седона"  height="256" width="800">
+              <div class="main-adv-wrapper">
+                <h3>Там есть мост дьявола</h3>
+                <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+                <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Мост Дьявола, Седона"  height="256" width="800">
+              </div>
             </li>
             <li class="rest-of-advantages">
               <h3>Небольшая площадь</h3>
@@ -78,7 +84,7 @@
         <section class="booking">
            <b>Заинтересовались?</b>
            <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-           <h2><button class="btn" type="button" name="button">Поиск гостиницы в Седоне</button></h2>
+           <h2><a class="btn search-btn" href="#">Поиск гостиницы в Седоне</a></h2>
            <form class="hotel-search-form visually-hidden" action="#" method="get">
              <p class="check-in">
                <label for="check-in-date">Дата заезда:</label>
@@ -105,18 +111,22 @@
         </section>
       </main>
 
-      <div id="map"></div>
+      <div id="map">
+        <img src="img/map.jpg" alt="Карта Седоны"  width="1200" height="473">
+      </div>
 
       <footer class="main-footer">
-        <a class="visit-sedona-link" href="https://travel.usnews.com/Sedona_AZ/Things_To_Do/"><b>#visitsedona</b></a>
+        <a class="visit-sedona-link" href="#"><b>#visitsedona</b></a>
         <ul>
-          <li><a href="#" title="Twitter"></a></li>
-          <li><a href="#" title="Facebook"></a></li>
-          <li><a href="#" title="YouTube"></a></li>
+          <li><a class="social-btn" href="#" title="Twitter"></a></li>
+          <li><a class="social-btn" href="#" title="Facebook"></a></li>
+          <li><a class="social-btn" href="#" title="YouTube"></a></li>
         </ul>
         <p class="footer-copyright">
           <span>Website by</span>
-          <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="#" alt="HTML Academy"></a>
+          <a href="https://htmlacademy.ru/intensive/htmlcss">
+            <img src="img/htmlacademy-logo.svg" alt="HTML Academy" height="41" width="115">
+          </a>
         </p>
       </footer>
     </div>
