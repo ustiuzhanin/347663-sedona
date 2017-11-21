@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Гостиницы Седоны</title>
+    <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
   </head>
@@ -10,193 +10,118 @@
 
     <div class="container">
 
-      <header>
+      <header class="main-header">
         <nav class="main-navigation">
-          <a class="sedona-logo" href="index.html">
+          <a class="sedona-logo">
             <img src="img/logo.png" alt="Логотип Седоны" height="70" width="138">
           </a>
-
           <ul class="nav-list">
             <li class="nav-item"><a href="#">Информация</a></li>
             <li class="nav-item"><a href="#">Фото и видео</a></li>
             <li class="nav-item"><a href="#">Карта штата</a></li>
-            <li class="nav-item"><a class="menu-active" href="#">Гостиницы</a></li>
+            <li class="nav-item"><a href="hotels.html">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
 
-        <section class="search-filters">
-
-          <form class="hotel-filters" action="https://echo.htmlacademy.ru" method="get">
-            <fieldset class="infrastructure">
-              <legend>Инфраструктура:</legend>
-              <ul class="infrastructure-list">
-                <li class="filter-option">
-                  <input class="filters-checkbox" id="pool" type="checkbox" name="pool">
-                  <label for="pool">Бассейн</label>
-                </li>
-                <li class="filter-option">
-                  <input class="filters-checkbox" id="parking" type="checkbox" name="parking">
-                  <label for="parking">Парковка</label>
-                </li>
-                <li class="filter-option">
-                  <input class="filters-checkbox" id="wi-fi" type="checkbox" name="wi-fi">
-                  <label for="wi-fi">Wi-Fi</label>
-                </li>
-              </ul>
-            </fieldset>
-
-            <!-- У li-шек в infrastructure и accomondation одинаковый класс.
-            Не уверена, что это будет удобно. Нужно или разные классы сделать,
-            или совсем их убрать. Тогда будет стилизовать за каскадом.
-            Типа, .infrastructure li или .accomondation li  -->
-
-            <!-- они одинакого стилизуются же, но я задал разные классы для списков-->
-
-            <fieldset class="accomondation">
-              <legend>Тип жилья:</legend>
-              <ul class="accomondation-list">
-                <li class="filter-option">
-                  <input class="filters-checkbox" id="hotel" type="checkbox" name="hotel">
-                  <label for="hotel">Гостиница</label>
-                </li>
-                <li class="filter-option">
-                  <input class="filters-checkbox" id="motel" type="checkbox" name="motel">
-                  <label for="motel">Мотель</label>
-                </li>
-                <li class="filter-option">
-                  <input class="filters-checkbox" id="apartments" type="checkbox" name="apartments">
-                  <label for="apartments">Апартаменты</label>
-                </li>
-              </ul>
-            </fieldset>
-
-            <div class="price-form-wrapper">
-              <fieldset class="price">
-                <legend>Стоимось в сутки(Р):</legend>
-                <div class="price-field">
-                  <p>
-                    <label class="visually-hidden" for="price-from">Цена от:</label>
-                    <input id="price-from" type="number" name="price-from" placeholder="От">
-                  </p>
-                  <p>
-                    <label class="visually-hidden" for="price-to">Цена до:</label>
-                    <input id="price-to" type="number" name="price-to" placeholder="До">
-                  </p>
-                </div>
-                <div class="price-range">
-                  <div class="price-slider">
-                    <span class="buller-left">*</span>
-                    <span class="buller-right">*</span>
-                  </div>
-                </div>
-              </fieldset>
-              <button class="submit-filters-btn" type="submit">Показать</button>
-            </div>
-
-          </form>
+        <section class="welcome">
+          <div class="welcome-sedona-wrapper">
+            <h1 class="visually-hidden">Welcome to the gorgeous Sedona</h1>
+          </div>
+          <div class="welcome-description-wrapper">
+            <h2>Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
+            <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон</p>
+          </div>
         </section>
 
-        <section class="search-results">
-
-          <div class="results-filters">
-            <div class="results-counter">Найдено: <span>3</span></div>
-            <div class="sorting-filters">
-              <p class="sorting-text">Сортировка:</p>
-              <ul class="sorting-list">
-                <li><a class="filter-links current-filter" href="#">По цене</a></li>
-                <li><a class="filter-links" href="#">По типу</a></li>
-                <li><a class="filter-links" href="#">По рейтингу</a></li>
+        <section class="advantages">
+          <ol class="advantages-list">
+            <li class="first-advantage">
+              <div class="main-advantages-wrapper">
+                <div class="advantages-text-wrapper">
+                  <h3>Настоящий городок</h3>
+                  <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
+                </div>
+                <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Жизнь в Седоне"  height="256" width="800">
+              </div>
+              <ul class="sedonas-live-list">
+                <li class="live-item">
+                  <b>Жилье</b>
+                  <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+                </li>
+                <li class="live-item">
+                  <b>Еда</b>
+                  <p>Всегда заказывайте фирменный, Вы не разочаруетесь!</p>
+                </li>
+                <li class="live-item">
+                  <b>Сувениры</b>
+                  <p>Не только китайского, но и местного производства!</p>
+                </li>
               </ul>
-            </div>
-            <div class="direction-filters">
-              <a class="lowest-first" href="#">По возврастанию</a>
-              <a class="highest-first current-direction" href="#">По убыванию</a>
-            </div>
+            </li>
+            <li class="second-advantage">
+              <div class="main-advantages-wrapper">
+                <div class="advantages-text-wrapper">
+                  <h3>Там есть мост дьявола</h3>
+                  <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+                </div>
+                <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Мост Дьявола, Седона"  height="256" width="800">
+              </div>
+            </li>
+            <li class="rest-of-advantages">
+              <h3>Небольшая площадь</h3>
+              <p>Все достопримечательности находятся очень близко</p>
+            </li>
+            <li class="rest-of-advantages">
+              <h3>Красивая дорога</h3>
+              <p>Ехать в седону из Лас-вегаса совсем не скучно</p>
+            </li>
+            <li class="rest-of-advantages">
+              <h3>Мало туристов</h3>
+              <p>Большинство едет в Гранд Каньон и толпится там</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="booking">
+          <div class="booking-text">
+            <b>Заинтересовались?</b>
+            <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+            <!-- И под этими текстовками начинается блок формы -->
           </div>
-
-          <ul class="hotels-list">
-            <li class="hotel-item">
-              <div class="hotel-description">
-                <div class="hotel-img-wrapper">
-                  <img class="hotel-img" src="img/amara-resort.jpg" alt="Amara resort & SPA"  height="90" width="135">
-                </div>
-                <h3><a class="hotel-link" href="#">Amara Resort & SPA</a></h3>
-                <div class="staying-wrapper">
-                  <p class="staying-type">Гостиница</p>
-                  <p class="staying-min-price">От <span class="price-modifier">4000</span> Р.</p>
-                </div>
-                <div class="hotels-btns-wrapper">
-                  <a class="btn info-btn" href="#">Подробнее</a>
-                  <a class="btn booking-btn" href="#">Забронировать</a>
-                </div>
-              </div>
-              <div class="hotels-classification">
-                <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                </ul>
-                <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,5</span></p>
-              </div>
-            </li>
-
-            <li class="hotel-item">
-              <div class="hotel-description">
-                <div class="hotel-img-wrapper">
-                  <img class="hotel-img" src="img/desert-inn.jpg" alt="Desert Quail Inn"  height="90" width="135">
-                </div>
-                <h3><a class="hotel-link" href="#">Desert Quail Inn</a></h3>
-                <div class="staying-wrapper">
-                  <p class="staying-type">Мотель</p>
-                  <p class="staying-min-price">От <span class="price-modifier">3000</span> Р.</p>
-                </div>
-                <div class="hotels-btns-wrapper">
-                  <a class="btn info-btn" href="#">Подробнее</a>
-                  <a class="btn booking-btn" href="#">Забронировать</a>
-                </div>
-              </div>
-              <div class="hotels-classification">
-                <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                </ul>
-                <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,9</span></p>
-              </div>
-            </li>
-
-            <li class="hotel-item">
-              <div class="hotel-description">
-                <div class="hotel-img-wrapper">
-                  <img class="hotel-img" src="img/villa-poco.jpg" alt="Villas At Poco Diablo"  height="90" width="135">
-                </div>
-                <h3><a class="hotel-link" href="#">Villas At Poco Diablo</a></h3>
-                <div class="staying-wrapper">
-                  <p class="staying-type">Аппартамены</p>
-                  <p class="staying-min-price">От <span class="price-modifier">2000</span> Р.</p>
-                </div>
-                <div class="hotels-btns-wrapper">
-                  <a class="btn info-btn" href="#">Подробнее</a>
-                  <a class="btn booking-btn" href="#">Забронировать</a>
-                </div>
-              </div>
-              <div class="hotels-classification">
-                <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                </ul>
-                <p class="hotel-rating">Рейтинг: <span class="rating-counter">9,2</span></p>
-              </div>
-            </li>
-          </ul>
-
+          <h2><a class="search-btn" href="#">Поиск гостиницы в Седоне</a></h2>
+          <form class="hotel-search-form visually-hidden" action="#" method="get">
+            <p class="check-in">
+               <label for="check-in-date">Дата заезда:</label>
+               <input class="search-input" id="check-in-date" type="date" name="check-in">
+             </p>
+             <p class="check-out">
+               <label for="check-out-date">Дата выезда:</label>
+               <input class="search-input" id="check-out-date" type="date" name="check-out">
+             </p>
+             <p class="adults-amount">
+               <label for="adults">Взрослые:</label>
+               <input class="search-input" id="adults" type="number" name="adults" value="0">
+               <button type="button" class="adult-up">+</button>
+               <button type="button" class="adult-down">-</button>
+             </p>
+             <p class="kids-amount">
+               <label for="kids">Дети:</label>
+               <input class="search-input" id="kids" type="number" name="kids" value="0">
+               <button type="button" class="kids-up">+</button>
+               <button type="button" class="kids-down">-</button>
+             </p>
+             <button class="search-submit-btn" type="submit">Найти</button>
+           </form>
         </section>
 
       </main>
+
+      <div id="map">
+        <img src="img/map.jpg" alt="Карта Седоны"  width="1200" height="473">
+      </div>
 
       <footer class="main-footer">
         <a class="visit-sedona-link" href="#"><b>#visitsedona</b></a>
@@ -226,12 +151,12 @@
             <?xml version="1.0" encoding="UTF-8"?>
             <svg class="htmlacademy-logo" data-name="Layer 1" version="1.1" viewBox="0 0 113 39" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <metadata>
-                    <rdf:RDF>
-                    <cc:Work rdf:about="">
-                    <dc:format>image/svg+xml</dc:format>
-                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                    <dc:title>logo_name</dc:title>
-                  </cc:Work>
+                <rdf:RDF>
+                <cc:Work rdf:about="">
+                  <dc:format>image/svg+xml</dc:format>
+                  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                  <dc:title>logo_name</dc:title>
+                </cc:Work>
                 </rdf:RDF>
               </metadata>
               <title>logo_name</title>
@@ -253,6 +178,4 @@
       </footer>
     </div>
   </body>
-
-
 </html>
