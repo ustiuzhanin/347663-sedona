@@ -2,135 +2,218 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
+    <title>Гостиницы Седоны</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
   </head>
   <body>
+
     <div class="container">
-      <header class="main-header">
+
+      <header>
         <nav class="main-navigation">
-          <a class="sedona-logo">
+          <a class="sedona-logo" href="index.html">
             <img src="img/logo.png" alt="Логотип Седоны" height="70" width="138">
           </a>
-          <ul>
-            <li><a href="#">Информация</a></li>
-            <li><a href="#">Фото и видео</a></li>
-            <li><a href="#">Карта штата</a></li>
-            <li><a href="hotels.html">Гостиницы</a></li>
+
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#">Информация</a></li>
+            <li class="nav-item"><a href="#">Фото и видео</a></li>
+            <li class="nav-item"><a href="#">Карта штата</a></li>
+            <li class="nav-item"><a class="menu-active" href="#">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <section class="welcome">
-          <div class="welcome-sedona-wrapper">
-            <h1 class="visually-hidden">Sedona</h1>
-          </div>
-          <div class="welcome-description-wrapper">
-            <h2>Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
-            <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон</p>
-          </div>
-          <!-- dltd?
-          <img class="welcome-sign" src="http://placehold.it/150x100" alt="Welcome sign" height="100" width="150">
-          <img class="welcome-text-note" src="http://placehold.it/150x100" alt="Because Grand Canyon sucks!" height="100" width="150"> -->
-        </section>
 
-        <section class="advantages">
-          <ol class="advantages-list">
-            <li class="first-advantage">
-              <div class="main-advantages-wrapper">
-                <h3>Настоящий городок</h3>
-                <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
-                <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Жизнь в Седоне"  height="256" width="800">
-              </div>
-              <ul class="sedonas-live-description">
-                <li>
-                  <b>Жилье</b>
-                  <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+        <section class="search-filters">
+
+          <form class="hotel-filters" action="https://echo.htmlacademy.ru" method="get">
+            <fieldset class="infrastructure">
+              <legend>Инфраструктура:</legend>
+              <ul class="infrastructure-list">
+                <li class="filter-option">
+                  <input class="filters-checkbox" id="pool" type="checkbox" name="pool">
+                  <label for="pool">Бассейн</label>
                 </li>
-                <li>
-                  <b>Еда</b>
-                  <p>Всегда заказывайте фирменный, Вы не разочаруетесь!</p>
+                <li class="filter-option">
+                  <input class="filters-checkbox" id="parking" type="checkbox" name="parking">
+                  <label for="parking">Парковка</label>
                 </li>
-                <li>
-                  <b>Сувениры</b>
-                  <p>Не только китайского, но и местного производства!</p>
+                <li class="filter-option">
+                  <input class="filters-checkbox" id="wi-fi" type="checkbox" name="wi-fi">
+                  <label for="wi-fi">Wi-Fi</label>
                 </li>
               </ul>
-            </li>
-            <li class="second-advantage">
-              <div class="main-advantages-wrapper">
-                <h3>Там есть мост дьявола</h3>
-                <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-                <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Мост Дьявола, Седона"  height="256" width="800">
+            </fieldset>
+
+            <!-- У li-шек в infrastructure и accomondation одинаковый класс.
+            Не уверена, что это будет удобно. Нужно или разные классы сделать,
+            или совсем их убрать. Тогда будет стилизовать за каскадом.
+            Типа, .infrastructure li или .accomondation li  -->
+
+            <!-- они одинакого стилизуются же, но я задал разные классы для списков-->
+
+            <fieldset class="accomondation">
+              <legend>Тип жилья:</legend>
+              <ul class="accomondation-list">
+                <li class="filter-option">
+                  <input class="filters-checkbox" id="hotel" type="checkbox" name="hotel">
+                  <label for="hotel">Гостиница</label>
+                </li>
+                <li class="filter-option">
+                  <input class="filters-checkbox" id="motel" type="checkbox" name="motel">
+                  <label for="motel">Мотель</label>
+                </li>
+                <li class="filter-option">
+                  <input class="filters-checkbox" id="apartments" type="checkbox" name="apartments">
+                  <label for="apartments">Апартаменты</label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <div class="price-form-wrapper">
+              <fieldset class="price">
+                <legend>Стоимось в сутки(Р):</legend>
+                <div class="price-field">
+                  <p>
+                    <label class="visually-hidden" for="price-from">Цена от:</label>
+                    <input id="price-from" type="number" name="price-from" placeholder="От">
+                  </p>
+                  <p>
+                    <label class="visually-hidden" for="price-to">Цена до:</label>
+                    <input id="price-to" type="number" name="price-to" placeholder="До">
+                  </p>
+                </div>
+                <div class="price-range">
+                  <div class="price-slider">
+                    <span class="buller-left">*</span>
+                    <span class="buller-right">*</span>
+                  </div>
+                </div>
+              </fieldset>
+              <button class="submit-filters-btn" type="submit">Показать</button>
+            </div>
+
+          </form>
+        </section>
+
+        <section class="search-results">
+
+          <div class="results-filters">
+            <div class="results-counter">Найдено: <span>3</span></div>
+            <div class="sorting-filters">
+              <p class="sorting-text">Сортировка:</p>
+              <ul class="sorting-list">
+                <li><a class="filter-links current-filter" href="#">По цене</a></li>
+                <li><a class="filter-links" href="#">По типу</a></li>
+                <li><a class="filter-links" href="#">По рейтингу</a></li>
+              </ul>
+            </div>
+            <div class="direction-filters">
+              <a class="lowest-first" href="#">По возврастанию</a>
+              <a class="highest-first current-direction" href="#">По убыванию</a>
+            </div>
+          </div>
+
+          <ul class="hotels-list">
+            <li class="hotel-item">
+              <div class="hotel-description">
+                <div class="hotel-img-wrapper">
+                  <img class="hotel-img" src="img/amara-resort.jpg" alt="Amara resort & SPA"  height="90" width="135">
+                </div>
+                <h3><a class="hotel-link" href="#">Amara Resort & SPA</a></h3>
+                <div class="staying-wrapper">
+                  <p class="staying-type">Гостиница</p>
+                  <p class="staying-min-price">От <span class="price-modifier">4000</span> Р.</p>
+                </div>
+                <div class="hotels-btns-wrapper">
+                  <a class="btn info-btn" href="#">Подробнее</a>
+                  <a class="btn booking-btn" href="#">Забронировать</a>
+                </div>
+              </div>
+              <div class="hotels-classification">
+                <ul class="rating-list">
+                  <li class="rating-star">star</li>
+                  <li class="rating-star">star</li>
+                  <li class="rating-star">star</li>
+                  <li class="rating-star">star</li>
+                </ul>
+                <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,5</span></p>
               </div>
             </li>
-            <li class="rest-of-advantages">
-              <h3>Небольшая площадь</h3>
-              <p>Все достопримечательности находятся очень близко</p>
+
+            <li class="hotel-item">
+              <div class="hotel-description">
+                <div class="hotel-img-wrapper">
+                  <img class="hotel-img" src="img/desert-inn.jpg" alt="Desert Quail Inn"  height="90" width="135">
+                </div>
+                <h3><a class="hotel-link" href="#">Desert Quail Inn</a></h3>
+                <div class="staying-wrapper">
+                  <p class="staying-type">Мотель</p>
+                  <p class="staying-min-price">От <span class="price-modifier">3000</span> Р.</p>
+                </div>
+                <div class="hotels-btns-wrapper">
+                  <a class="btn info-btn" href="#">Подробнее</a>
+                  <a class="btn booking-btn" href="#">Забронировать</a>
+                </div>
+              </div>
+              <div class="hotels-classification">
+                <ul class="rating-list">
+                  <li class="rating-star">star</li>
+                  <li class="rating-star">star</li>
+                  <li class="rating-star">star</li>
+                </ul>
+                <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,9</span></p>
+              </div>
             </li>
-            <li class="rest-of-advantages">
-              <h3>Красивая дорога</h3>
-              <p>Ехать в седону из Лас-вегаса совсем не скучно</p>
+
+            <li class="hotel-item">
+              <div class="hotel-description">
+                <div class="hotel-img-wrapper">
+                  <img class="hotel-img" src="img/villa-poco.jpg" alt="Villas At Poco Diablo"  height="90" width="135">
+                </div>
+                <h3><a class="hotel-link" href="#">Villas At Poco Diablo</a></h3>
+                <div class="staying-wrapper">
+                  <p class="staying-type">Аппартамены</p>
+                  <p class="staying-min-price">От <span class="price-modifier">2000</span> Р.</p>
+                </div>
+                <div class="hotels-btns-wrapper">
+                  <a class="btn info-btn" href="#">Подробнее</a>
+                  <a class="btn booking-btn" href="#">Забронировать</a>
+                </div>
+              </div>
+              <div class="hotels-classification">
+                <ul class="rating-list">
+                  <li class="rating-star">star</li>
+                  <li class="rating-star">star</li>
+                </ul>
+                <p class="hotel-rating">Рейтинг: <span class="rating-counter">9,2</span></p>
+              </div>
             </li>
-            <li class="rest-of-advantages">
-              <h3>Мало туристов</h3>
-              <p>Большинство едет в Гранд Каньон и толпится там</p>
-            </li>
-          </ol>
+          </ul>
+
         </section>
 
-        <section class="booking">
-           <b>Заинтересовались?</b>
-           <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-           <h2><a class="search-btn" href="#">Поиск гостиницы в Седоне</a></h2>
-           <form class="hotel-search-form visually-hidden" action="#" method="get">
-             <p class="check-in">
-               <label for="check-in-date">Дата заезда:</label>
-               <input class="search-input" id="check-in-date" type="date" name="check-in">
-             </p>
-             <p class="check-out">
-               <label for="check-out-date">Дата выезда:</label>
-               <input class="search-input" id="check-out-date" type="date" name="check-out">
-             </p>
-             <p class="adults-amount">
-               <label for="adults">Взрослые:</label>
-               <input class="search-input" id="adults" type="number" name="adults" value="0">
-               <button type="button" class="adult-up">+</button>
-               <button type="button" class="adult-down">-</button>
-             </p>
-             <p class="kids-amount">
-               <label for="kids">Дети:</label>
-               <input class="search-input" id="kids" type="number" name="kids" value="0">
-               <button type="button" class="kids-up">+</button>
-               <button type="button" class="kids-down">-</button>
-             </p>
-             <button class="search-submit-btn" type="submit">Найти</button>
-           </form>
-        </section>
       </main>
-
-      <div id="map">
-        <img src="img/map.jpg" alt="Карта Седоны"  width="1200" height="473">
-      </div>
 
       <footer class="main-footer">
         <a class="visit-sedona-link" href="#"><b>#visitsedona</b></a>
         <ul class="social-list">
-          <li>
+          <li class="social-list-item">
             <a class="social-btn" href="#" title="Twitter">
               <?xml version="1.0" encoding="UTF-8"?>
               <svg class="social-icon" enable-background="new 0 0 17 15" version="1.1" viewBox="0 0 17 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><path d="m10.95 0.144c1.685-0.496 2.984 0.27 3.577 1.179 0.673-0.231 1.331-0.481 2.011-0.708-4e-3 0.861-0.522 1.513-0.857 1.768 0.685 0.17 1.304-0.491 1.304-0.491-0.169 1-1.006 1.788-1.563 2.024-0.231 6.75-3.175 11.217-10.077 11.082h-0.446c-0.41 0-4.164-0.46-4.898-1.887 2.271 0.196 3.893-0.422 4.693-1.177-0.96-0.3-2.679-0.477-2.979-2.95 0.349 0.106 0.564 0.228 1.19 0.119-1.2-0.856-2.531-1.573-2.457-3.773 0.285 0.328 1.067 0.536 1.34 0.472-0.703-0.241-1.97-3.36-0.894-4.952 1.818 1.854 3.735 3.606 7.152 3.773 0.208-2.293 1.137-3.83 2.904-4.479z" fill="#fff"/></svg>
             </a>
           </li>
-          <li>
+          <li class="social-list-item">
             <a class="social-btn" href="#" title="Facebook">
               <?xml version="1.0" encoding="UTF-8"?>
               <svg class="social-icon" enable-background="new 0 0 12 22" version="1.1" viewBox="0 0 12 22" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><path d="m12 4v-4h-4c-2.209 0-4 1.791-4 4v4h-4v4h4v10h4v-10h4v-4h-4v-4h4z" fill="#fff"/></svg>
             </a>
           </li>
-          <li>
+          <li class="social-list-item">
             <a class="social-btn" href="#" title="YouTube">
               <?xml version="1.0" encoding="UTF-8"?>
               <svg class="social-icon" enable-background="new 0 0 20 16" version="1.1" viewBox="0 0 20 16" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><path d="m17 0h-14c-1.65 0-3 1.35-3 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-10c0-1.65-1.35-3-3-3zm-10.973 11.998v-7.996l8.987 3.998-8.987 3.998z" fill="#fff"/></svg>
@@ -143,31 +226,33 @@
             <?xml version="1.0" encoding="UTF-8"?>
             <svg class="htmlacademy-logo" data-name="Layer 1" version="1.1" viewBox="0 0 113 39" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <metadata>
-                <rdf:RDF>
-                <cc:Work rdf:about="">
-                <dc:format>image/svg+xml</dc:format>
-                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                <dc:title>logo_name</dc:title>
-              </cc:Work>
-            </rdf:RDF>
-          </metadata>
-          <title>logo_name</title>
-          <path transform="translate(-355.09 -323.29)" d="m401.93 351.51a2.07 2.07 0 0 0 0.58 -0.11v1.4a3.41 3.41 0 0 1 -1.24 0.22 1.75 1.75 0 0 1 -1.75 -1 5.08 5.08 0 0 1 -3.3 1.13c-1.59 0-3.06-0.87-3.06-2.68 0-2.24 2.08-2.93 3.9-2.93a11.63 11.63 0 0 1 2.28 0.26v-0.31c0-1.09-0.8-1.86-2.3-1.86a7.79 7.79 0 0 0 -3.15 0.67v-1.79a10.72 10.72 0 0 1 3.35 -0.58c2.48 0 4 1.18 4 3.83v3.14a0.57 0.57 0 0 0 0.69 0.61zm-6.76-1.19a1.42 1.42 0 0 0 1.64 1.29 3.56 3.56 0 0 0 2.53 -1v-1.51a10.21 10.21 0 0 0 -1.9 -0.22c-1.1 0.01-2.27 0.35-2.27 1.45z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m408.15 343.91a5.29 5.29 0 0 1 2.7 0.67v1.79a4.28 4.28 0 0 0 -2.42 -0.73 2.89 2.89 0 1 0 0 5.76 5.26 5.26 0 0 0 2.55 -0.67v1.8a6.58 6.58 0 0 1 -2.9 0.6 4.42 4.42 0 0 1 -4.72 -4.54 4.54 4.54 0 0 1 4.79 -4.68z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m420.93 351.51a2.07 2.07 0 0 0 0.58 -0.11v1.4a3.41 3.41 0 0 1 -1.24 0.22 1.75 1.75 0 0 1 -1.75 -1 5.08 5.08 0 0 1 -3.3 1.13c-1.59 0-3.06-0.87-3.06-2.68 0-2.24 2.08-2.93 3.9-2.93a11.63 11.63 0 0 1 2.28 0.26v-0.31c0-1.09-0.8-1.86-2.3-1.86a7.79 7.79 0 0 0 -3.15 0.67v-1.79a10.72 10.72 0 0 1 3.35 -0.58c2.48 0 4 1.18 4 3.83v3.14a0.57 0.57 0 0 0 0.69 0.61zm-6.76-1.19a1.42 1.42 0 0 0 1.64 1.29 3.56 3.56 0 0 0 2.53 -1v-1.51a10.21 10.21 0 0 0 -1.9 -0.22c-1.11 0.01-2.27 0.35-2.27 1.45z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m431.76 340.14v12.76h-1.76v-1.39a4.07 4.07 0 0 1 -3.35 1.62 4.62 4.62 0 0 1 0 -9.22 4 4 0 0 1 3.15 1.37v-5.14h2zm-4.76 5.48a2.9 2.9 0 0 0 0 5.8 3 3 0 0 0 2.79 -1.84v-2.13a3.06 3.06 0 0 0 -2.79 -1.83z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m438.08 343.91c3.48 0 4.68 2.81 4.12 5.34h-6.58c0.22 1.57 1.75 2.22 3.35 2.22a6.41 6.41 0 0 0 2.77 -0.62v1.68a7.5 7.5 0 0 1 -3.14 0.6c-2.68 0-5-1.53-5-4.61a4.39 4.39 0 0 1 4.48 -4.61zm0.09 1.62a2.39 2.39 0 0 0 -2.57 2.26h4.85a2.06 2.06 0 0 0 -2.28 -2.26z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m444.19 352.9v-8.75h1.73v1.09a4 4 0 0 1 2.92 -1.33 3 3 0 0 1 2.73 1.4 4.33 4.33 0 0 1 3.06 -1.4 3.21 3.21 0 0 1 3.32 3.52v5.47h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 2.94 2.94 0 0 0 -2.17 1.18v6.07h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 3.11 3.11 0 0 0 -2.32 1.35v5.91h-2z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m466.56 344.15h2l-4.1 9.93c-0.95 2.28-2.19 3-3.52 3a5 5 0 0 1 -1.15 -0.15v-1.66a3 3 0 0 0 0.89 0.13c0.95 0 1.66-0.67 2.17-2l0.18-0.44-4.16-8.82h2.13l3 6.6z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m395.75 324.82v5a4 4 0 0 1 2.83 -1.2 3.41 3.41 0 0 1 3.61 3.57v5.41h-2v-5.16a1.9 1.9 0 0 0 -2 -2.1 3.08 3.08 0 0 0 -2.44 1.46v5.8h-2v-12.78h2z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m407.52 325.71v3.12h3.17v1.71h-3.17v4c0 1.15 0.53 1.53 1.66 1.53a4.71 4.71 0 0 0 1.77 -0.35v1.68a7.14 7.14 0 0 1 -2.35 0.38 2.68 2.68 0 0 1 -3 -2.88v-4.38h-1.6v-1.71h1.57v-2.64z" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m413.19 337.58v-8.75h1.73v1.09a4 4 0 0 1 2.92 -1.33 3 3 0 0 1 2.73 1.4 4.33 4.33 0 0 1 3.06 -1.4 3.21 3.21 0 0 1 3.32 3.52v5.47h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 2.94 2.94 0 0 0 -2.17 1.18v6.07h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 3.11 3.11 0 0 0 -2.32 1.35v5.91h-2z" fill="#fff"/>
-          <rect x="74.72" y="1.52" width="1.95" height="12.76" fill="#fff"/>
-          <path transform="translate(-355.09 -323.29)" d="m370.53 323.31h-0.16l-15.28 1.6v28l15.28 9.09 15.28-9.09v-28zm13.12 28.45-13.28 7.9-13.28-7.9v-11.48l13.22 7.87v1.43l-9.07-5.4v1.38l9.11 5.47v1.46l-9.1-5.42v1.38l9.11 5.47 9.19-5.5v-5.91l4.1-2.45v11.67zm0-13.16l-3.65 2.14-1.68 1-8-4.76v1.38l6.84 4.07h-0.06l-0.15 0.09-1 0.57-5.64-3.36v1.38l4.45 2.65-1.05 0.7-3.36-2v1.38l2.21 1.3-2.25 1.35-13.16-7.82 13.17-7.92zm0-1.39-13.35-7.87l-13.2 7.86v-10.5l13.28-1.39 13.28 1.39v10.51z" fill="#fff"/>
-        </svg>
-      </a>
-    </p>
+                    <rdf:RDF>
+                    <cc:Work rdf:about="">
+                    <dc:format>image/svg+xml</dc:format>
+                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                    <dc:title>logo_name</dc:title>
+                  </cc:Work>
+                </rdf:RDF>
+              </metadata>
+              <title>logo_name</title>
+              <path transform="translate(-355.09 -323.29)" d="m401.93 351.51a2.07 2.07 0 0 0 0.58 -0.11v1.4a3.41 3.41 0 0 1 -1.24 0.22 1.75 1.75 0 0 1 -1.75 -1 5.08 5.08 0 0 1 -3.3 1.13c-1.59 0-3.06-0.87-3.06-2.68 0-2.24 2.08-2.93 3.9-2.93a11.63 11.63 0 0 1 2.28 0.26v-0.31c0-1.09-0.8-1.86-2.3-1.86a7.79 7.79 0 0 0 -3.15 0.67v-1.79a10.72 10.72 0 0 1 3.35 -0.58c2.48 0 4 1.18 4 3.83v3.14a0.57 0.57 0 0 0 0.69 0.61zm-6.76-1.19a1.42 1.42 0 0 0 1.64 1.29 3.56 3.56 0 0 0 2.53 -1v-1.51a10.21 10.21 0 0 0 -1.9 -0.22c-1.1 0.01-2.27 0.35-2.27 1.45z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m408.15 343.91a5.29 5.29 0 0 1 2.7 0.67v1.79a4.28 4.28 0 0 0 -2.42 -0.73 2.89 2.89 0 1 0 0 5.76 5.26 5.26 0 0 0 2.55 -0.67v1.8a6.58 6.58 0 0 1 -2.9 0.6 4.42 4.42 0 0 1 -4.72 -4.54 4.54 4.54 0 0 1 4.79 -4.68z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m420.93 351.51a2.07 2.07 0 0 0 0.58 -0.11v1.4a3.41 3.41 0 0 1 -1.24 0.22 1.75 1.75 0 0 1 -1.75 -1 5.08 5.08 0 0 1 -3.3 1.13c-1.59 0-3.06-0.87-3.06-2.68 0-2.24 2.08-2.93 3.9-2.93a11.63 11.63 0 0 1 2.28 0.26v-0.31c0-1.09-0.8-1.86-2.3-1.86a7.79 7.79 0 0 0 -3.15 0.67v-1.79a10.72 10.72 0 0 1 3.35 -0.58c2.48 0 4 1.18 4 3.83v3.14a0.57 0.57 0 0 0 0.69 0.61zm-6.76-1.19a1.42 1.42 0 0 0 1.64 1.29 3.56 3.56 0 0 0 2.53 -1v-1.51a10.21 10.21 0 0 0 -1.9 -0.22c-1.11 0.01-2.27 0.35-2.27 1.45z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m431.76 340.14v12.76h-1.76v-1.39a4.07 4.07 0 0 1 -3.35 1.62 4.62 4.62 0 0 1 0 -9.22 4 4 0 0 1 3.15 1.37v-5.14h2zm-4.76 5.48a2.9 2.9 0 0 0 0 5.8 3 3 0 0 0 2.79 -1.84v-2.13a3.06 3.06 0 0 0 -2.79 -1.83z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m438.08 343.91c3.48 0 4.68 2.81 4.12 5.34h-6.58c0.22 1.57 1.75 2.22 3.35 2.22a6.41 6.41 0 0 0 2.77 -0.62v1.68a7.5 7.5 0 0 1 -3.14 0.6c-2.68 0-5-1.53-5-4.61a4.39 4.39 0 0 1 4.48 -4.61zm0.09 1.62a2.39 2.39 0 0 0 -2.57 2.26h4.85a2.06 2.06 0 0 0 -2.28 -2.26z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m444.19 352.9v-8.75h1.73v1.09a4 4 0 0 1 2.92 -1.33 3 3 0 0 1 2.73 1.4 4.33 4.33 0 0 1 3.06 -1.4 3.21 3.21 0 0 1 3.32 3.52v5.47h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 2.94 2.94 0 0 0 -2.17 1.18v6.07h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 3.11 3.11 0 0 0 -2.32 1.35v5.91h-2z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m466.56 344.15h2l-4.1 9.93c-0.95 2.28-2.19 3-3.52 3a5 5 0 0 1 -1.15 -0.15v-1.66a3 3 0 0 0 0.89 0.13c0.95 0 1.66-0.67 2.17-2l0.18-0.44-4.16-8.82h2.13l3 6.6z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m395.75 324.82v5a4 4 0 0 1 2.83 -1.2 3.41 3.41 0 0 1 3.61 3.57v5.41h-2v-5.16a1.9 1.9 0 0 0 -2 -2.1 3.08 3.08 0 0 0 -2.44 1.46v5.8h-2v-12.78h2z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m407.52 325.71v3.12h3.17v1.71h-3.17v4c0 1.15 0.53 1.53 1.66 1.53a4.71 4.71 0 0 0 1.77 -0.35v1.68a7.14 7.14 0 0 1 -2.35 0.38 2.68 2.68 0 0 1 -3 -2.88v-4.38h-1.6v-1.71h1.57v-2.64z" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m413.19 337.58v-8.75h1.73v1.09a4 4 0 0 1 2.92 -1.33 3 3 0 0 1 2.73 1.4 4.33 4.33 0 0 1 3.06 -1.4 3.21 3.21 0 0 1 3.32 3.52v5.47h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 2.94 2.94 0 0 0 -2.17 1.18v6.07h-2v-5.41a1.67 1.67 0 0 0 -1.73 -1.84 3.11 3.11 0 0 0 -2.32 1.35v5.91h-2z" fill="#fff"/>
+              <rect x="74.72" y="1.52" width="1.95" height="12.76" fill="#fff"/>
+              <path transform="translate(-355.09 -323.29)" d="m370.53 323.31h-0.16l-15.28 1.6v28l15.28 9.09 15.28-9.09v-28zm13.12 28.45-13.28 7.9-13.28-7.9v-11.48l13.22 7.87v1.43l-9.07-5.4v1.38l9.11 5.47v1.46l-9.1-5.42v1.38l9.11 5.47 9.19-5.5v-5.91l4.1-2.45v11.67zm0-13.16l-3.65 2.14-1.68 1-8-4.76v1.38l6.84 4.07h-0.06l-0.15 0.09-1 0.57-5.64-3.36v1.38l4.45 2.65-1.05 0.7-3.36-2v1.38l2.21 1.3-2.25 1.35-13.16-7.82 13.17-7.92zm0-1.39-13.35-7.87l-13.2 7.86v-10.5l13.28-1.39 13.28 1.39v10.51z" fill="#fff"/>
+            </svg>
+          </a>
+        </p>
       </footer>
     </div>
   </body>
+
+
 </html>
