@@ -31,6 +31,7 @@ body {
   color: #000000;
   text-transform: uppercase;
 
+  /* Уже близко, но опять не совсем то :) */
   background-color: #fefefe;
 }
 
@@ -80,13 +81,13 @@ a {
 /*welcome*/
 
 .welcome {
-  background-color: #b77b76;
+
+  background-color: #74899c;
   background-image: url("../img/main-bg.jpg");
   background-repeat: no-repeat;
 }
 
 .welcome-sedona-wrapper {
-  background-color: #b77b76;
   background-image: url("../img/sedona-welcome.png");
   background-repeat: no-repeat;
 }
@@ -123,8 +124,8 @@ a {
   line-height: 21px;
 }
 
-.advantages .advantages-list,
-.advantages .sedonas-live-list {
+.advantages-list,
+.sedonas-live-list {
   list-style-type: none;
 }
 
@@ -278,8 +279,7 @@ a {
   background-color: #5496bd;
 }
 
-/* Слишком большая вложенность. Помни про критерий Д7 */
-.main-footer .social-btn:focus .social-icon path{
+.social-btn:focus .social-icon path{
   fill: rgba(256, 256, 256, 0.3);
 }
 
@@ -404,7 +404,6 @@ a {
   color: #000000;
 }
 
-/* Пробельчик потерялся */
 .filter-links.current-filter {
   color: #81b3d2;
 }
