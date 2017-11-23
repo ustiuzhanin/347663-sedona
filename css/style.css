@@ -19,6 +19,13 @@
 }
 
 /*common styles*/
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
 body {
   padding: 0;
@@ -31,8 +38,7 @@ body {
   color: #000000;
   text-transform: uppercase;
 
-  /* Уже близко, но опять не совсем то :) */
-  background-color: #fefefe;
+  background-color: #f2f2f2;
 }
 
 img {
@@ -58,12 +64,49 @@ a {
   background-color: #ffffff;
 }
 
+.main-navigation {
+  position: relative;
+}
+
+.main-navigation .sedona-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+
+  margin-left: -69px;
+}
+
 .main-navigation ul {
+  margin: 0;
+  padding: 0;
+
   list-style-type: none;
 }
 
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-list .nav-item {
+  width: 240px;
+  text-align: center;
+}
+
+.nav-list .nav-item:nth-child(2) {
+  margin-right: 240px;
+}
+
+ .nav-item a {
+   padding: 15px;
+ }
+
 .main-navigation a {
+  display: inline-block;
+
   color: #000000;
+  text-align: center;
 }
 
 .main-navigation a:hover {
@@ -81,6 +124,10 @@ a {
 /*welcome*/
 
 .welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 720px;
 
   background-color: #74899c;
   background-image: url("../img/main-bg.jpg");
@@ -88,6 +135,11 @@ a {
 }
 
 .welcome-sedona-wrapper {
+  height: 352px;
+  width: 458px;
+  margin: auto;
+
+
   background-image: url("../img/sedona-welcome.png");
   background-repeat: no-repeat;
 }
@@ -119,6 +171,22 @@ a {
   background-color: #81b3d2;
 }
 
+.main-advantages-wrapper {
+  display: flex;
+}
+
+.main-advantages-wrapper:last-child {
+  flex-direction: row-reverse;
+}
+
+.advantages-text-wrapper {
+  width: 33.34%;
+}
+
+.main-advantages-wrapper img {
+  width: 66.66%;
+}
+
 .main-advantages-wrapper h3 {
   font-size: 21px;
   line-height: 21px;
@@ -126,13 +194,22 @@ a {
 
 .advantages-list,
 .sedonas-live-list {
+  padding: 0;
+  margin: 0;
+
   list-style-type: none;
 }
 
 .advantages .sedonas-live-list {
+  display: flex;
+
   color: #000;
 
   background-color: #ffffff;
+}
+
+.sedonas-live-list .live-item {
+  width: 33.34%;
 }
 
 .sedonas-live-list b {
@@ -145,6 +222,9 @@ a {
 }
 
 .rest-of-advantages {
+  /*float: left;*/
+  width: 33.33%;
+
   color: #000000;
   text-align: center;
 
@@ -162,12 +242,26 @@ a {
 
 /*booking*/
 
+.booking {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+}
+
 .booking-text {
+  max-width: 400px;
+  margin: 0 auto;
+
   color: #000;
   line-height: 24px;
   text-align: center;
 
   background-color: #ffffff;
+}
+
+.booking h2 {
+  margin: 0;
 }
 
 .booking b {
@@ -176,6 +270,10 @@ a {
 }
 
 .booking .search-btn {
+  display: block;
+  width: 568px;
+  margin: 0 auto;
+
   color: #ffffff;
   font-size: 21px;
   line-height: 26px;
@@ -195,6 +293,10 @@ a {
 }
 
 .booking .hotel-search-form {
+  width: 568px;
+  margin: 0 auto;
+  padding: 55px;
+
   color: #000000;
   line-height: 26px;
   font-weight: bold;
@@ -242,9 +344,19 @@ a {
 /*footer*/
 
 .main-footer {
+  display: flex;
+  justify-content: space-between;
+
   color: #000000;
 
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-items-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 33.33%;
+
 }
 
 .main-footer .visit-sedona-link {
