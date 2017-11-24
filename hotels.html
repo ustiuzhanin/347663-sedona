@@ -30,7 +30,7 @@
         <section class="search-filters">
 
           <form class="hotel-filters" action="https://echo.htmlacademy.ru" method="get">
-            <fieldset class="infrastructure">
+            <fieldset class="search-form-wrapper infrastructure">
               <legend>Инфраструктура:</legend>
               <ul class="infrastructure-list">
                 <li class="filter-option">
@@ -55,7 +55,7 @@
 
             <!-- они одинакого стилизуются же, но я задал разные классы для списков-->
 
-            <fieldset class="accomondation">
+            <fieldset class="search-form-wrapper accomondation">
               <legend>Тип жилья:</legend>
               <ul class="accomondation-list">
                 <li class="filter-option">
@@ -73,7 +73,7 @@
               </ul>
             </fieldset>
 
-            <div class="price-form-wrapper">
+            <div class="search-form-wrapper">
               <fieldset class="price">
                 <legend>Стоимось в сутки(Р):</legend>
                 <div class="price-field">
@@ -119,77 +119,83 @@
 
           <ul class="hotels-list">
             <li class="hotel-item">
-              <div class="hotel-description">
+              <div class="hotel-item-container">
                 <div class="hotel-img-wrapper">
                   <img class="hotel-img" src="img/amara-resort.jpg" alt="Amara resort & SPA"  height="90" width="135">
                 </div>
-                <h3><a class="hotel-link" href="#">Amara Resort & SPA</a></h3>
-                <div class="staying-wrapper">
-                  <p class="staying-type">Гостиница</p>
-                  <p class="staying-min-price">От <span class="price-modifier">4000</span> Р.</p>
+                <div class="hotel-description">
+                  <h3><a class="hotel-link" href="#">Amara Resort & SPA</a></h3>
+                  <div class="staying-wrapper">
+                    <p class="staying-type">Гостиница</p>
+                    <p class="staying-min-price">От <span class="price-modifier">4000</span> Р.</p>
+                  </div>
+                  <div class="hotels-btns-wrapper">
+                    <a class="btn info-btn" href="#">Подробнее</a>
+                    <a class="btn booking-btn" href="#">Забронировать</a>
+                  </div>
                 </div>
-                <div class="hotels-btns-wrapper">
-                  <a class="btn info-btn" href="#">Подробнее</a>
-                  <a class="btn booking-btn" href="#">Забронировать</a>
+                <div class="hotels-classification">
+                  <ul class="rating-list">
+                    <li class="rating-star">star</li>
+                    <li class="rating-star">star</li>
+                    <li class="rating-star">star</li>
+                    <li class="rating-star">star</li>
+                  </ul>
+                  <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,5</span></p>
                 </div>
-              </div>
-              <div class="hotels-classification">
-                <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                </ul>
-                <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,5</span></p>
               </div>
             </li>
 
             <li class="hotel-item">
-              <div class="hotel-description">
+              <div class="hotel-item-container">
                 <div class="hotel-img-wrapper">
                   <img class="hotel-img" src="img/desert-inn.jpg" alt="Desert Quail Inn"  height="90" width="135">
                 </div>
-                <h3><a class="hotel-link" href="#">Desert Quail Inn</a></h3>
-                <div class="staying-wrapper">
-                  <p class="staying-type">Мотель</p>
-                  <p class="staying-min-price">От <span class="price-modifier">3000</span> Р.</p>
+                <div class="hotel-description">
+                  <h3><a class="hotel-link" href="#">Desert Quail Inn</a></h3>
+                  <div class="staying-wrapper">
+                    <p class="staying-type">Мотель</p>
+                    <p class="staying-min-price">От <span class="price-modifier">3000</span> Р.</p>
+                  </div>
+                  <div class="hotels-btns-wrapper">
+                    <a class="btn info-btn" href="#">Подробнее</a>
+                    <a class="btn booking-btn" href="#">Забронировать</a>
+                  </div>
                 </div>
-                <div class="hotels-btns-wrapper">
-                  <a class="btn info-btn" href="#">Подробнее</a>
-                  <a class="btn booking-btn" href="#">Забронировать</a>
+                <div class="hotels-classification">
+                  <ul class="rating-list">
+                    <li class="rating-star">star</li>
+                    <li class="rating-star">star</li>
+                    <li class="rating-star">star</li>
+                  </ul>
+                  <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,9</span></p>
                 </div>
-              </div>
-              <div class="hotels-classification">
-                <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                </ul>
-                <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,9</span></p>
               </div>
             </li>
 
             <li class="hotel-item">
-              <div class="hotel-description">
+              <div class="hotel-item-container">
                 <div class="hotel-img-wrapper">
                   <img class="hotel-img" src="img/villa-poco.jpg" alt="Villas At Poco Diablo"  height="90" width="135">
                 </div>
-                <h3><a class="hotel-link" href="#">Villas At Poco Diablo</a></h3>
-                <div class="staying-wrapper">
-                  <p class="staying-type">Аппартамены</p>
-                  <p class="staying-min-price">От <span class="price-modifier">2000</span> Р.</p>
+                <div class="hotel-description">
+                  <h3><a class="hotel-link" href="#">Villas At Poco Diablo</a></h3>
+                  <div class="staying-wrapper">
+                    <p class="staying-type">Аппартамены</p>
+                    <p class="staying-min-price">От <span class="price-modifier">2000</span> Р.</p>
+                  </div>
+                  <div class="hotels-btns-wrapper">
+                    <a class="btn info-btn" href="#">Подробнее</a>
+                    <a class="btn booking-btn" href="#">Забронировать</a>
+                  </div>
                 </div>
-                <div class="hotels-btns-wrapper">
-                  <a class="btn info-btn" href="#">Подробнее</a>
-                  <a class="btn booking-btn" href="#">Забронировать</a>
+                <div class="hotels-classification">
+                  <ul class="rating-list">
+                    <li class="rating-star">star</li>
+                    <li class="rating-star">star</li>
+                  </ul>
+                  <p class="hotel-rating">Рейтинг: <span class="rating-counter">9,2</span></p>
                 </div>
-              </div>
-              <div class="hotels-classification">
-                <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                </ul>
-                <p class="hotel-rating">Рейтинг: <span class="rating-counter">9,2</span></p>
               </div>
             </li>
           </ul>

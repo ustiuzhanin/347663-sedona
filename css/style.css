@@ -43,6 +43,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -76,26 +77,24 @@ a {
   margin-left: -69px;
 }
 
-.main-navigation ul {
+.nav-list {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   list-style-type: none;
 }
 
-.nav-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .nav-list .nav-item {
-  width: 240px;
+  min-width: 20%;
   text-align: center;
 }
 
 .nav-list .nav-item:nth-child(2) {
-  margin-right: 240px;
+  margin-right: 20%;
 }
 
  .nav-item a {
@@ -163,6 +162,19 @@ a {
 
 /*advantages*/
 
+.advantages-list,
+.sedonas-live-list {
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .first-advantage,
 .second-advantage {
   color: #ffffff;
@@ -192,16 +204,9 @@ a {
   line-height: 21px;
 }
 
-.advantages-list,
-.sedonas-live-list {
-  padding: 0;
-  margin: 0;
-
-  list-style-type: none;
-}
-
 .advantages .sedonas-live-list {
   display: flex;
+  flex-wrap: wrap;
 
   color: #000;
 
@@ -209,7 +214,7 @@ a {
 }
 
 .sedonas-live-list .live-item {
-  width: 33.34%;
+  width: 33.33%;
 }
 
 .sedonas-live-list b {
@@ -222,7 +227,6 @@ a {
 }
 
 .rest-of-advantages {
-  /*float: left;*/
   width: 33.33%;
 
   color: #000000;
@@ -243,9 +247,6 @@ a {
 /*booking*/
 
 .booking {
-  display: flex;
-  flex-direction: column;
-
   background-color: #ffffff;
 }
 
@@ -346,6 +347,7 @@ a {
 .main-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   color: #000000;
 
@@ -353,10 +355,9 @@ a {
 }
 
 .footer-items-wrapper {
-  display: flex;
-  justify-content: center;
   width: 33.33%;
 
+  text-align: center;
 }
 
 .main-footer .visit-sedona-link {
@@ -404,6 +405,8 @@ a {
   display: inline-block;
   width: 240px;
   height: 60px;
+
+  color: #000000;
 }
 
 .main-footer .htmlacademy-logo {
@@ -427,15 +430,29 @@ a {
 
 /*search filters*/
 
+.hotel-filters {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 28px 70px;
+}
+
+.search-form-wrapper {
+  width: 33.33%;
+}
+
 .search-filters {
   color: #ffffff;
 
   background-color: #74899c;
   background-image: url("../img/hotels-bg.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .search-filters fieldset {
+  padding: 0;
+  margin: 0;
+
   border: none;
 }
 
@@ -450,7 +467,7 @@ a {
   list-style-type: none;
 }
 
-.price-form-wrapper input {
+.price input {
   font: inherit;
   text-transform: uppercase;
   color: #ffffff;
@@ -458,7 +475,7 @@ a {
   background:none;
 }
 
-.price-form-wrapper .submit-filters-btn {
+.search-form-wrapper .submit-filters-btn {
   color: #ffffff;
   text-transform: uppercase;
   font: inherit;
@@ -469,7 +486,7 @@ a {
   background: none;
 }
 
-.price-form-wrapper .submit-filters-btn:hover {
+.search-form-wrapper .submit-filters-btn:hover {
   color: #000000;
   background-color: #ffffff;
 }
@@ -477,12 +494,21 @@ a {
 /*search results*/
 
 .search-results {
+  padding: 30px 70px;
+
   color: #000000;
 
   background-color: #ffffff;
 }
 
-.search-results .results-counter {
+.results-filters {
+  display: flex;
+  align-items: center;
+}
+
+.results-counter {
+  width: 20%;
+
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
@@ -493,13 +519,26 @@ a {
   line-height: 18px;
 }
 
+.sorting-filters {
+  display: flex;
+
+  width: 60%;
+}
+
 .sorting-filters ul {
   padding: 0;
+  margin: 0;
 
   list-style-type: none;
 }
 
+.sorting-list li {
+  display: inline-block;
+}
+
 .search-results .filter-links {
+  min-height: 21px;
+
   font-size: 12px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.3);
@@ -520,6 +559,20 @@ a {
   color: #81b3d2;
 }
 
+.direction-filters {
+  width: 20%;
+}
+
+.hotels-list {
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.hotel-item-container {
+  display: flex;
+}
+
 .hotels-list .hotel-link {
   font-size: 21px;
   line-height: 26px;
@@ -529,6 +582,10 @@ a {
 
 .hotels-list .hotel-link:hover {
   color: #81b3d2;
+}
+
+.staying-wrapper {
+  display: flex;
 }
 
 .hotels-list .info-btn,
@@ -570,4 +627,8 @@ a {
   color: #666666;
 
   background-color: #f2f2f2;
+}
+
+.hotels-classification {
+  margin-left: auto;
 }
