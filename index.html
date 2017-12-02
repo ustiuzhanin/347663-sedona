@@ -104,23 +104,23 @@
           <form class="hotel-search-form #@#-hidden" action="#" method="get">
             <p class="form-field-wrapper check-in">
                <label for="check-in-date">Дата заезда:</label>
-               <input class="search-input" id="check-in-date" type="date" name="check-in">
+               <input class="search-input date-input" id="check-in-date" type="text" name="check-in">
              </p>
              <p class="form-field-wrapper check-out">
                <label for="check-out-date">Дата выезда:</label>
-               <input class="search-input" id="check-out-date" type="date" name="check-out">
+               <input class="search-input date-input" id="check-out-date" type="text" name="check-out">
              </p>
-             <p class="form-field-wrapper adults-amount">
-               <label for="adults">Взрослые:</label>
+             <p class="form-field-wrapper adults-quantity">
+               <label class="quantity-label" for="adults">Взрослые:</label>
                <input class="search-input" id="adults" type="text" name="adults" value="0">
                <button class="control-btn btn-up" id="adults-btn-up" type="button">+</button>
                <button class="control-btn btn-down" id="adults-btn-down" type="button">-</button>
-             </p>
-             <p class="form-field-wrapper kids-amount">
-               <label for="kids">Дети:</label>
+             <p class="form-field-wrapper kids-quantity">
+               <label class="quantity-label" for="kids">Дети:
                <input class="search-input" id="kids" type="text" name="kids" value="0">
                <button class="control-btn btn-up" id="kids-btn-up" type="button">+</button>
                <button class="control-btn btn-down" id="kids-btn-down" type="button">-</button>
+               </label>
              </p>
              <button class="search-submit-btn" type="submit">Найти</button>
            </form>

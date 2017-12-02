@@ -30,67 +30,79 @@
         <section class="search-filters">
 
           <form class="hotel-filters" action="https://echo.htmlacademy.ru" method="get">
-            <fieldset class="search-form-wrapper infrastructure">
+            <fieldset class="infrastructure">
               <legend>Инфраструктура:</legend>
               <ul class="infrastructure-list">
                 <li class="filter-option">
-                  <input class="filters-checkbox" id="pool" type="checkbox" name="pool">
-                  <label for="pool">Бассейн</label>
+                  <label class="checkbox-option" for="pool">
+                    <input class="visually-hidden" id="pool" type="checkbox" name="pool">
+                    <span class="checkbox-indicator"></span>
+                    Бассейн
+                  </label>
                 </li>
                 <li class="filter-option">
-                  <input class="filters-checkbox" id="parking" type="checkbox" name="parking">
-                  <label for="parking">Парковка</label>
+                  <label class="checkbox-option" for="parking">
+                    <input class="visually-hidden" id="parking" type="checkbox" name="parking">
+                    <span class="checkbox-indicator"></span>
+                    Парковка
+                  </label>
                 </li>
                 <li class="filter-option">
-                  <input class="filters-checkbox" id="wi-fi" type="checkbox" name="wi-fi">
-                  <label for="wi-fi">Wi-Fi</label>
+                  <label class="checkbox-option" for="wi-fi">
+                    <input class="visually-hidden" class="filters-checkbox" id="wi-fi" type="checkbox" name="wi-fi">
+                    <span class="checkbox-indicator"></span>
+                    Wi-Fi
+                  </label>
                 </li>
               </ul>
             </fieldset>
-
-            <!-- У li-шек в infrastructure и accomondation одинаковый класс.
-            Не уверена, что это будет удобно. Нужно или разные классы сделать,
-            или совсем их убрать. Тогда будет стилизовать за каскадом.
-            Типа, .infrastructure li или .accomondation li  -->
-
-            <!-- они одинакого стилизуются же, но я задал разные классы для списков-->
-
-            <fieldset class="search-form-wrapper accomondation">
+            <fieldset class="accomondation">
               <legend>Тип жилья:</legend>
               <ul class="accomondation-list">
                 <li class="filter-option">
-                  <input class="filters-checkbox" id="hotel" type="checkbox" name="hotel">
-                  <label for="hotel">Гостиница</label>
+                  <label class="checkbox-option" for="hotel">
+                    <input class="visually-hidden" id="hotel" type="checkbox" name="hotel">
+                    <span class="checkbox-indicator"></span>
+                    Гостиница
+                  </label>
                 </li>
                 <li class="filter-option">
-                  <input class="filters-checkbox" id="motel" type="checkbox" name="motel">
-                  <label for="motel">Мотель</label>
+                  <label class="checkbox-option" for="motel">
+                    <input class="visually-hidden" id="motel" type="checkbox" name="motel">
+                    <span class="checkbox-indicator"></span>
+                    Мотель
+                  </label>
                 </li>
                 <li class="filter-option">
-                  <input class="filters-checkbox" id="apartments" type="checkbox" name="apartments">
-                  <label for="apartments">Апартаменты</label>
+                  <label class="checkbox-option" for="apartments">
+                    <input class="visually-hidden" id="apartments" type="checkbox" name="apartments">
+                    <span class="checkbox-indicator"></span>
+                    Апартаменты
+                  </label>
                 </li>
               </ul>
             </fieldset>
 
-            <div class="search-form-wrapper">
+            <div class="price-wrapper">
               <fieldset class="price">
                 <legend>Стоимось в сутки(Р):</legend>
                 <div class="price-field">
-                  <p>
-                    <label class="visually-hidden" for="price-from">Цена от:</label>
-                    <input id="price-from" type="number" name="price-from" placeholder="От">
-                  </p>
-                  <p>
-                    <label class="visually-hidden" for="price-to">Цена до:</label>
-                    <input id="price-to" type="number" name="price-to" placeholder="До">
-                  </p>
+                  <label class="min-price">
+                    От
+                    <input id="price-from" type="text" name="price-from" value="0">
+                  </label>
+
+                  <label class="max-price">
+                    До
+                    <input id="price-to" type="text" name="price-to" value="3000">
+                  </label>
                 </div>
                 <div class="price-range">
                   <div class="price-slider">
-                    <span class="buller-left">*</span>
-                    <span class="buller-right">*</span>
+                    <div class="sliding-line"></div>
                   </div>
+                  <span class="bullet buller-left">*</span>
+                  <span class="bullet buller-right">*</span>
                 </div>
               </fieldset>
               <button class="submit-filters-btn" type="submit">Показать</button>
@@ -112,8 +124,18 @@
               </ul>
             </div>
             <div class="direction-filters">
-              <a class="lowest-first" href="#">По возврастанию</a>
-              <a class="highest-first current-direction" href="#">По убыванию</a>
+              <button class="arrow lowest-first" type="button">
+                <span class="visually-hidden">По возврастанию</span>
+                <svg width="12" height="11">
+                  <polygon points="1,10 6,0 12,10" fill="#cacaca"/>
+                </svg>
+              </button>
+              <button class="arrow highest-first current-direction" type="button">
+                <span class="visually-hidden">По убыванию</span>
+                <svg width="12" height="11">
+                  <polygon points="1,0 6,10 12,0" fill="#cacaca"/>
+                </svg>
+              </button>
             </div>
           </div>
 
@@ -135,10 +157,30 @@
               </div>
               <div class="hotels-classification">
                 <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
                 </ul>
                 <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,5</span></p>
               </div>
@@ -161,9 +203,24 @@
               </div>
               <div class="hotels-classification">
                 <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
                 </ul>
                 <p class="hotel-rating">Рейтинг: <span class="rating-counter">8,9</span></p>
               </div>
@@ -186,8 +243,18 @@
               </div>
               <div class="hotels-classification">
                 <ul class="rating-list">
-                  <li class="rating-star">star</li>
-                  <li class="rating-star">star</li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
+                  <li class="rating-star">
+                    <span class="visually-hidden">star</span>
+                    <svg width="18" height="18">
+                      <polygon points="3,18 9,0 15,18 0,7 18,7" fill="#81b3d2"/>
+                    </svg>
+                  </li>
                 </ul>
                 <p class="hotel-rating">Рейтинг: <span class="rating-counter">9,2</span></p>
               </div>
@@ -198,7 +265,7 @@
 
       </main>
 
-      <footer class="main-footer">
+      <footer class="main-footer inner-footer">
         <a class="footer-items-wrapper visit-sedona-link" href="#"><b>#visitsedona</b></a>
         <ul class="footer-items-wrapper social-list">
           <li class="social-list-item">
