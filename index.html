@@ -44,27 +44,18 @@
                   <h3>Настоящий городок</h3>
                   <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
                 </div>
-                <img class="sedonas-live-img" src="img/sedona-town.jpg" alt="Жизнь в Седоне"  height="256" width="800">
+                <div class="sedonas-live-img"></div>
               </div>
               <ul class="sedonas-live-list">
-                <li class="live-item">
-                  <div class="item-icon-wrapper">
-                    <img src="./img/house-icon.svg" alt="Иконка дома" height="72" width="75">
-                  </div>
+                <li class="live-item item-house">
                   <b>Жилье</b>
                   <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
                 </li>
-                <li class="live-item">
-                  <div class="item-icon-wrapper">
-                    <img src="./img/hamburger-icon.svg" alt="Иконка бургера" height="70" width="74">
-                  </div>
+                <li class="live-item item-burger">
                   <b>Еда</b>
                   <p>Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
                 </li>
-                <li class="live-item">
-                  <div class="item-icon-wrapper">
-                    <img src="./img/gift-icon.svg" alt="Иконка подарка" height="76" width="64">
-                  </div>
+                <li class="live-item item-gift">
                   <b>Сувениры</b>
                   <p>Не только китайского, но и местного производства!</p>
                 </li>
@@ -73,10 +64,10 @@
             <li class="second-advantage">
               <div class="main-advantages-wrapper">
                 <div class="advantages-text-wrapper">
-                  <h3>Там есть мост дьявола</h3>
+                  <h3>Там есть<br> мост дьявола</h3>
                   <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
                 </div>
-                <img class="sedonas-devil-bridge" src="img/devils-bridge.jpg" alt="Мост Дьявола, Седона"  height="256" width="800">
+                <div class="sedonas-devil-bridge"></div>
               </div>
             </li>
             <li class="rest-of-advantages">
@@ -97,33 +88,53 @@
         <section class="booking">
           <div class="booking-text">
             <b>Заинтересовались?</b>
-            <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+            <p>Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
             <!-- И под этими текстовками начинается блок формы -->
           </div>
           <h2><a class="search-btn" href="#">Поиск гостиницы в Седоне</a></h2>
           <form class="hotel-search-form #@#-hidden" action="#" method="get">
             <p class="form-field-wrapper check-in">
-               <label for="check-in-date">Дата заезда:</label>
-               <input class="search-input date-input" id="check-in-date" type="text" name="check-in">
-             </p>
-             <p class="form-field-wrapper check-out">
-               <label for="check-out-date">Дата выезда:</label>
-               <input class="search-input date-input" id="check-out-date" type="text" name="check-out">
-             </p>
-             <p class="form-field-wrapper adults-quantity">
-               <label class="quantity-label" for="adults">Взрослые:</label>
-               <input class="search-input" id="adults" type="text" name="adults" value="0">
-               <button class="control-btn btn-up" id="adults-btn-up" type="button">+</button>
-               <button class="control-btn btn-down" id="adults-btn-down" type="button">-</button>
-             <p class="form-field-wrapper kids-quantity">
-               <label class="quantity-label" for="kids">Дети:
-               <input class="search-input" id="kids" type="text" name="kids" value="0">
-               <button class="control-btn btn-up" id="kids-btn-up" type="button">+</button>
-               <button class="control-btn btn-down" id="kids-btn-down" type="button">-</button>
-               </label>
-             </p>
-             <button class="search-submit-btn" type="submit">Найти</button>
-           </form>
+              <label for="check-in-date">Дата заезда:</label>
+              <input class="search-input date-input" id="check-in-date" type="text" name="check-in" placeholder="11.1.2017">
+              <button class="calendar-btn" type="button"></button>
+            </p>
+            <p class="form-field-wrapper check-out">
+              <label for="check-out-date">Дата выезда:</label>
+              <input class="search-input date-input" id="check-out-date" type="text" name="check-out" placeholder="14.1.2017">
+              <button class="calendar-btn" type="button"></button>
+            </p>
+            <p class="form-field-wrapper adults-quantity">
+              <label class="quantity-label" for="adults">Взрослые:</label>
+              <input class="search-input" id="adults" type="text" name="adults" value="0">
+              <button class="control-btn btn-up" id="adults-btn-up" type="button">
+                <svg height="12" width="12">
+                  <rect class="button" width="12" height="3" x="1" y="5" fill="#a9a9a9"/>
+                  <rect class="button" width="3" height="12" x="5" y="1" fill="#a9a9a9"/>
+                </svg>
+              </button>
+              <button class="control-btn btn-down" id="adults-btn-down" type="button">
+                <svg height="12" width="12">
+                  <rect class="button" width="12" height="3" x="1" y="5" fill="#a9a9a9"/>
+                </svg>
+              </button>
+            </p>
+            <p class="form-field-wrapper kids-quantity">
+              <label class="quantity-label" for="kids">Дети:</label>
+              <input class="search-input" id="kids" type="text" name="kids" value="0">
+              <button class="control-btn btn-up" id="kids-btn-up" type="button">
+                <svg height="12" width="12">
+                  <rect class="button" width="12" height="3" x="1" y="5" fill="#a9a9a9"/>
+                  <rect class="button" width="3" height="12" x="5" y="1" fill="#a9a9a9"/>
+                </svg>
+              </button>
+              <button class="control-btn btn-down" id="kids-btn-down" type="button">
+                <svg height="12" width="12">
+                  <rect class="button" width="12" height="3" x="1" y="5" fill="#a9a9a9"/>
+                </svg>
+              </button>
+            </p>
+            <button class="search-submit-btn" type="submit">Найти</button>
+          </form>
         </section>
 
       </main>
@@ -134,7 +145,9 @@
       </div>
 
       <footer class="main-footer">
-        <a class="footer-items-wrapper visit-sedona-link" href="#"><b>#visitsedona</b></a>
+        <div class="footer-items-wrapper">
+          <a class="visit-sedona-link" href="#"><b>#visitsedona</b></a>
+        </div>
         <ul class="footer-items-wrapper social-list">
           <li class="social-list-item">
             <a class="social-btn" href="#" title="Twitter">

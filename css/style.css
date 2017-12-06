@@ -90,6 +90,8 @@ input[type="radio"].visually-hidden {
 
 .main-navigation {
   position: relative;
+
+  padding: 0 6%;
 }
 
 .main-navigation .sedona-logo {
@@ -106,7 +108,6 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   list-style-type: none;
 }
@@ -120,6 +121,16 @@ input[type="radio"].visually-hidden {
 
 .nav-list .nav-item:nth-child(2) {
   margin-right: 20%;
+}
+
+.nav-list .nav-item:nth-child(1),
+.nav-list .nav-item:nth-child(2) {
+  text-align: left;
+}
+
+.nav-list .nav-item:nth-child(3),
+.nav-list .nav-item:nth-child(4) {
+  text-align: right;
 }
 
 .nav-item a {
@@ -221,8 +232,14 @@ input[type="radio"].visually-hidden {
   flex-wrap: wrap;
 }
 
+.advantages-list > li {
+  counter-increment: features-counter;
+}
+
 .first-advantage,
 .second-advantage {
+  width: 100%;
+
   color: #ffffff;
   text-align: center;
 
@@ -245,17 +262,34 @@ input[type="radio"].visually-hidden {
   width: 33.34%;
   padding-top: 26px;
   padding-bottom: 45px;
-  padding-left: 45px;
-  padding-right: 45px;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
-.main-advantages-wrapper img {
+.main-advantages-wrapper .sedonas-live-img {
+  min-height: 256px;
   width: 66.66%;
+
+  background: url("../img/sedona-town.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-advantages-wrapper .sedonas-devil-bridge {
+  min-height: 256px;
+  width: 66.66%;
+
+  background: url("../img/devils-bridge.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .main-advantages-wrapper h3 {
   position: relative;
-  max-width: 151px; /*ну тут я не знаю как еще сделать без бров*/
+
+  padding: 0 43px;
 
   font-size: 21px;
   line-height: 21px;
@@ -263,7 +297,7 @@ input[type="radio"].visually-hidden {
 
 .main-advantages-wrapper h3::after,
 .rest-of-advantages h3::after {
-  content: "\2013  №1 \2013";
+  content:  "\2013 №" counter(features-counter) " \2013";
 
   position: absolute;
   bottom: -45px;
@@ -273,10 +307,6 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
-}
-
-.main-advantages-wrapper:last-child h3::after {
-  content: "\2013  №2 \2013";
 }
 
 .advantages .sedonas-live-list {
@@ -297,12 +327,31 @@ input[type="radio"].visually-hidden {
   width: 33.33%;
   padding-top: 60px;
   padding-bottom: 82px;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding-right: 4%;
+  padding-left: 4%;
 }
 
 .item-icon-wrapper {
   height: 80px;
+}
+
+.live-item::before {
+  content: "";
+
+  display: block;
+  height: 76px;
+}
+
+.item-house::before {
+  content: url("../img/house-icon.svg");
+}
+
+.item-burger::before {
+  content: url("../img/hamburger-icon.svg");
+}
+
+.item-gift::before {
+  content: url("../img/gift-icon.svg");
 }
 
 .sedonas-live-list b {
@@ -336,15 +385,13 @@ input[type="radio"].visually-hidden {
 .rest-of-advantages h3 {
   position: relative;
 
-  padding: 0 60px; /*здесь тоже*/
+  padding: 0 23%;
 
   font-size: 21px;
   line-height: 21px;
 }
 
-.rest-of-advantages:nth-child(even) h3::after { /*я не смог докопаться до заголовков по цифрам, работает только ивен и одд >< */
-  content: "\2013  №4 \2013";  /*делать по классам теперь? неочень выйдет наверно */
-}
+
 .rest-of-advantages p {
   color: #333333;
 }
@@ -357,7 +404,7 @@ input[type="radio"].visually-hidden {
 }
 
 .booking-text {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 
   color: #000;
@@ -426,6 +473,8 @@ input[type="radio"].visually-hidden {
 }
 
 .form-field-wrapper {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -441,14 +490,7 @@ input[type="radio"].visually-hidden {
 }
 
 .adults-quantity .search-input {
-  position: relative;
-
   text-align: center;
-}
-
-.adults-quantity .search-input::before {
-  content: " - ";
-  position: absolute;
 }
 
 .kids-quantity .search-input {
@@ -466,8 +508,11 @@ input[type="radio"].visually-hidden {
 .control-btn {
   position: absolute;
 
+  padding: 5px;
+
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .control-btn.btn-up {
@@ -508,9 +553,11 @@ input[type="radio"].visually-hidden {
 .control-btn:focus .search-input {
   background-color: #ffffff;
   outline: 2px solid #e5e5e5;
+}
+
 }*/
 
-.date-input {
+/*.date-input {
   background-image: url(../img/calendar.svg);
   background-repeat: no-repeat;
   background-position: 313px 8px;
@@ -522,6 +569,19 @@ input[type="radio"].visually-hidden {
 
 .date-input:focus {
   background-image: url(../img/calendar-focus.svg);
+}*/
+
+.calendar-btn {
+  position: absolute;
+  right: 0;
+
+  height: 30px;
+  width: 30px;
+
+  background-image: url(../img/calendar.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
 }
 
 .adults-quantity .search-input,
@@ -587,8 +647,18 @@ input[type="radio"].visually-hidden {
 }
 
 .main-footer .visit-sedona-link {
+  padding: 5px;
+
   font-size: 21px;
   color: #000000;
+}
+
+.visit-sedona-link:hover {
+  color: #81b3d2;
+}
+
+.visit-sedona-link:focus {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .main-footer .social-list {
@@ -677,11 +747,13 @@ body .inner-footer {
 .hotel-filters {
   display: flex;
   flex-wrap: wrap;
-  padding: 28px 72px;
+  padding: 28px 0;
   padding-bottom: 17px;
 }
 
 .search-filters {
+  padding: 0 6%;
+
   color: #ffffff;
 
   background-color: #74899c;
@@ -722,7 +794,7 @@ body .inner-footer {
   flex-direction: column;
 
   margin: 0;
-  padding-left: 39px;
+  padding-left: 15%;
   padding-top: 10px;
 
   list-style-type: none;
@@ -881,6 +953,8 @@ body .inner-footer {
   border: 2px solid #ffffff;
   border-radius: 2px;
   background: none;
+
+  cursor: pointer;
 }
 
 .submit-filters-btn:hover {
@@ -891,7 +965,7 @@ body .inner-footer {
 /*search results*/
 
 .search-results {
-  padding: 0 70px;
+  padding: 0 6%;
 
   color: #000000;
 
@@ -949,12 +1023,12 @@ body .inner-footer {
   color: rgba(0, 0, 0, 0.3);
   text-decoration: none;
 
+  background: linear-gradient(left, #81b3d2 50%, transparent 50%);
   background: -webkit-linear-gradient(left, #81b3d2 50%, transparent 50%);
   background-size: 1px 1px;
   background-position: left bottom;
   background-repeat: repeat-x;
 
-  /*border-bottom: 1px dotted #81b3d2;*/
 }
 
 .search-results .filter-links:hover {
