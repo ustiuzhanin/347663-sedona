@@ -130,18 +130,23 @@ input[type="radio"].visually-hidden {
 
 .nav-list .nav-item {
   min-width: 20%;
-  padding: 15px;
+  padding: 15px 0;
 
   text-align: center;
 }
 
 .nav-list .nav-item:nth-child(2) {
   margin-right: 20%;
+  padding-left: 30px;
 }
 
 .nav-list .nav-item:nth-child(1),
 .nav-list .nav-item:nth-child(2) {
   text-align: left;
+}
+
+.nav-list .nav-item:nth-child(3) {
+  padding-right: 30px;
 }
 
 .nav-list .nav-item:nth-child(3),
@@ -165,16 +170,17 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.nav-item a.nav-active {
+.menu-active  a {
   color: #766357;
+  cursor: default;
 }
 
 .menu-active a:hover {
-  color: #000000;
+  color: #766357;
 }
 
 .menu-active a:active {
-  color: #000000;
+  color: #766357;
 }
 
 /*welcome*/
@@ -195,12 +201,13 @@ input[type="radio"].visually-hidden {
   background-color: #74899c;
   background-image: url("../img/main-bg.jpg");
   background-repeat: no-repeat;
+  background-position: center -56px;
 }
 
 .welcome-sedona-wrapper {
   height: 352px;
   width: 458px;
-  margin: 77px auto;
+  margin: 78px auto;
 
 
   background-image: url("../img/sedona-welcome.png");
@@ -210,7 +217,7 @@ input[type="radio"].visually-hidden {
 .welcome-description-wrapper {
   position: relative;
 
-  padding: 45px 25%;
+  padding: 44px 25%;
 
   color: #000000;
   line-height: 26px;
@@ -310,6 +317,7 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #b3c8dd;
 }
 
 .main-advantages-wrapper .sedonas-devil-bridge {
@@ -320,6 +328,7 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #b3c8dd;
 }
 
 .main-advantages-wrapper h3 {
@@ -361,7 +370,7 @@ input[type="radio"].visually-hidden {
 .sedonas-live-list .live-item {
   min-height: 330px;
   width: 33.33%;
-  padding-top: 60px;
+  padding-top: 56px;
   padding-bottom: 82px;
   padding-right: 4%;
   padding-left: 4%;
@@ -376,7 +385,7 @@ input[type="radio"].visually-hidden {
 
   display: block;
   height: 76px;
-  margin-bottom: 25px;
+  margin-bottom: 29px;
 }
 
 .item-house b::before {
@@ -701,12 +710,16 @@ input[type="radio"].visually-hidden {
 /*map*/
 
 .map {
-  min-height: 570px;
+  height: 593px;
 
   background-image: url("../img/map.jpg");
   background-position: center;
   background-size: cover;
   background-color: #f2f1ef;
+}
+
+.map iframe {
+  border: 0;
 }
 
 /*footer*/
@@ -776,8 +789,8 @@ input[type="radio"].visually-hidden {
 
 .main-footer .social-btn {
   display: block;
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 48px;
 
   background-color: #81b3d2;
 }
@@ -826,7 +839,7 @@ input[type="radio"].visually-hidden {
 .main-footer .htmlacademy-logo {
   width: 115px;
   height: 41px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .htmlacademy-logo path,
@@ -882,6 +895,9 @@ body .inner-footer {
   border: none;
 }
 
+.search-filters .price {
+  padding-left: 10px;
+}
 
 .infrastructure,
 .accomondation {
@@ -1073,7 +1089,7 @@ body .inner-footer {
 .submit-filters-btn {
   display: block;
   margin: 0 auto;
-  padding: 6px 35px;
+  padding: 5px 33px;
 
   color: #ffffff;
   text-transform: uppercase;
