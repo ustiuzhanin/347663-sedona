@@ -499,10 +499,6 @@ input[type="radio"].visually-hidden {
 
 /*booking form*/
 
-.booking.form-hidden {
-  display: none;
-}
-
 .booking .hotel-search-form {
   position: absolute;
   left: 50%;
@@ -527,6 +523,10 @@ input[type="radio"].visually-hidden {
 
   background-color: #ffffff;
   box-shadow: 0 0 40px #9a9a9a;
+}
+
+.booking .form-hidden {
+  display: none;
 }
 
 .hotel-search-form button {
@@ -1368,4 +1368,85 @@ body .inner-footer {
 .hotels-classification .hotel-rating {
   margin: 0;
   padding: 4px 15px;
+}
+
+/*form animation*/
+
+/*открытие формы*/
+
+@keyframes bounce-in-left {
+
+  0% {
+    opacity: 0;
+    transform: translateX(-3000px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-45%);
+  }
+
+  75% {
+    transform: translateX(-55%);
+  }
+
+  90% {
+    transform: translateX(-48%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.bounce-in-left {
+  animation-name: bounce-in-left;
+  animation-duration: 0.7s;
+}
+
+/*закрытие формы*/
+
+@keyframes bounce-out-right {
+  20% {
+    opacity: 1;
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+
+.bounce-out-right {
+  animation-name: bounce-out-right;
+  animation-duration: 0.7s;
+}
+
+/*неправильый ввод данных*/
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-52%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-48%);
+  }
+}
+
+.fill-out-error {
+  animation: shake 0.6s;
 }
