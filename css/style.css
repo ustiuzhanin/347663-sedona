@@ -522,7 +522,8 @@ input[type="radio"].visually-hidden {
   font-weight: bold;
 
   background-color: #ffffff;
-  box-shadow: 0 0 40px #9a9a9a;
+  -webkit-box-shadow: 0 0 40px #9a9a9a;
+          box-shadow: 0 0 40px #9a9a9a;
 }
 
 .booking .form-hidden {
@@ -1240,6 +1241,11 @@ body .inner-footer {
   margin-right: 3%;
 }
 
+.hotel-img {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .hotels-list {
   padding: 0;
   margin: 0;
@@ -1251,7 +1257,7 @@ body .inner-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 25px 0;
+  padding: 30px 0;
   padding-bottom: 30px;
 
   border-top: 1px solid #e5e5e5;
@@ -1272,9 +1278,14 @@ body .inner-footer {
   color: #81b3d2;
 }
 
+.hotel-description {
+  max-width: 50%;
+}
+
 .hotel-description h3 {
   margin: 0;
   margin-bottom: 7px;
+  margin-top: -5px;
 }
 
 .hotel-description p {
@@ -1289,7 +1300,8 @@ body .inner-footer {
 }
 
 .staying-type {
-  width: 45%;
+  width: 110px;
+  margin-right: 5px;
 }
 
 .hotels-list .btn {
@@ -1374,61 +1386,117 @@ body .inner-footer {
 
 /*открытие формы*/
 
-@keyframes bounce-in-left {
+@-webkit-keyframes bounce-in-left {
 
   0% {
     opacity: 0;
-    transform: translateX(-3000px);
+    -webkit-transform: translateX(-3000px);
+            transform: translateX(-3000px);
   }
 
   60% {
     opacity: 1;
-    transform: translateX(-45%);
+    -webkit-transform: translateX(-45%);
+            transform: translateX(-45%);
   }
 
   75% {
-    transform: translateX(-55%);
+    -webkit-transform: translateX(-55%);
+            transform: translateX(-55%);
   }
 
   90% {
-    transform: translateX(-48%);
+    -webkit-transform: translateX(-48%);
+            transform: translateX(-48%);
   }
 
   to {
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+@keyframes bounce-in-left {
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-3000px);
+            transform: translateX(-3000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-45%);
+            transform: translateX(-45%);
+  }
+
+  75% {
+    -webkit-transform: translateX(-55%);
+            transform: translateX(-55%);
+  }
+
+  90% {
+    -webkit-transform: translateX(-48%);
+            transform: translateX(-48%);
+  }
+
+  to {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
 .bounce-in-left {
-  animation-name: bounce-in-left;
-  animation-duration: 0.7s;
+  -webkit-animation-name: bounce-in-left;
+          animation-name: bounce-in-left;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
 }
 
 /*закрытие формы*/
 
-@keyframes bounce-out-right {
+@-webkit-keyframes bounce-out-right {
   20% {
     opacity: 1;
-    transform: translate3d(-20px, 0, 0);
+    -webkit-transform: translate3d(-20px, 0, 0);
+            transform: translate3d(-20px, 0, 0);
   }
 
   to {
     opacity: 0;
-    transform: translate3d(2000px, 0, 0);
+    -webkit-transform: translate3d(2000px, 0, 0);
+            transform: translate3d(2000px, 0, 0);
+  }
+}
+
+@keyframes bounce-out-right {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0);
+            transform: translate3d(-20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+            transform: translate3d(2000px, 0, 0);
   }
 }
 
 .bounce-out-right {
-  animation-name: bounce-out-right;
-  animation-duration: 0.7s;
+  -webkit-animation-name: bounce-out-right;
+          animation-name: bounce-out-right;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
 }
 
 /*неправильый ввод данных*/
 
-@keyframes shake {
+@-webkit-keyframes shake {
   0%,
   100% {
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   10%,
@@ -1436,17 +1504,45 @@ body .inner-footer {
   50%,
   70%,
   90% {
-    transform: translateX(-52%);
+    -webkit-transform: translateX(-52%);
+            transform: translateX(-52%);
   }
 
   20%,
   40%,
   60%,
   80% {
-    transform: translateX(-48%);
+    -webkit-transform: translateX(-48%);
+            transform: translateX(-48%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-52%);
+            transform: translateX(-52%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(-48%);
+            transform: translateX(-48%);
   }
 }
 
 .fill-out-error {
-  animation: shake 0.6s;
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
