@@ -720,6 +720,8 @@ input[type="radio"].visually-hidden {
 }
 
 .map iframe {
+  width: 100%;
+
   border: 0;
 }
 
